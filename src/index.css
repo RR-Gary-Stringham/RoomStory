@@ -1,0 +1,394 @@
+@import url('https://cdn.jsdelivr.net/gh/REVREBEL/fonts@main/rebel-fonts.css');
+@import "tailwindcss";
+
+@theme {
+
+  /* Fonts */
+  --font-brand: var(--font-brand);
+  --font-numbers: var(--font-numbers);
+  --font-eyebrow: var(--font-eyebrow);
+  --font-buttons: var(--font-buttons);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+
+  --color-brand-bg: var(--base-color-9);
+  --color-brand-ink: var(--base-primary);
+  --color-brand-accent: var(--accent);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: oklch(1.0000 0 0);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--base-primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  /* Actions */
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+
+  /* Dark-Blue (Mapped to working base-primary tokens) */
+  --color-dark-blue: var(--base-primary);
+  --color-dark-blue-fade: var(--base-primary-fade);
+  --color-dark-blue-inverse: var(--base-primary-inverse);
+  --color-dark-blue-inverse-fade: var(--base-primary-inverse-fade);
+  
+  /* Dark-Green */
+  --color-dark-green: var(--base-color-1);
+  --color-dark-green-fade: var(--base-color-1-fade);
+  --color-dark-green-inverse: var(--base-color-1-inverse);
+  --color-dark-green-inverse-fade: var(--base-color-1-inverse-fade);
+
+  /* Green */
+  --color-green: var(--base-color-2);
+  --color-green-fade: var(--base-color-2-fade);
+  --color-green-inverse: var(--base-color-2-inverse);
+  --color-green-inverse-fade: var(--base-color-2-inverse-fade);
+
+  /* Light-Green (Fixed typo) */
+  --color-light-green: var(--base-color-3);
+  --color-light-green-fade: var(--base-color-3-fade);
+  --color-light-green-inverse: var(--base-color-3-inverse);
+  --color-light-green-inverse-fade: var(--base-color-3-inverse-fade);
+
+  /* Light-Blue */
+  --color-light-blue: var(--base-color-4);
+  --color-light-blue-fade: var(--base-color-4-inverse);
+  --color-light-blue-inverse: var(--base-color-4-inverse);
+  --color-light-blue-inverse-fade: var(--base-color-4-inverse-fade);
+
+  /* Yellow */
+  --color-yellow: var(--base-color-5);
+  --color-yellow-fade: var(--base-color-5-fade);
+  --color-yellow-inverse: var(--base-color-5-inverse);
+  --color-yellow-inverse-fade: var(--base-color-5-inverse-fade);
+
+  /* Orange */
+  --color-orange: var(--base-color-6);
+  --color-orange-fade: var(--base-color-6-fade);
+  --color-orange-inverse: var(--base-color-6-inverse);
+  --color-orange-inverse-fade: var(--base-color-6-inverse-fade);
+
+  /* Red */
+  --color-red: var(--base-color-7);
+  --color-red-fade: var(--base-color-7-fade);
+  --color-red-inverse: var(--base-color-7-inverse);
+  --color-red-inverse-fade: var(--base-color-7-inverse-fade);
+
+  /* Purple */
+  --color-purple: var(--base-color-8);
+  --color-purple-fade: var(--base-color-8-fade);
+  --color-purple-inverse: var(--base-color-8-inverse);
+  --color-purple-inverse-fade: var(--base-color-8-inverse-fade);
+
+  /* Smoke */
+  --color-smoke: var(--base-color-9);
+  --color-smoke-fade: var(--base-color-9-fade);
+  --color-smoke-inverse: var(--base-color-9-inverse);
+  --color-smoke-inverse-fade: var(--base-color-9-inverse-fade);
+  
+  /* Computed Shadow Variants */
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  /* Radius */
+  --radius-xs: .25rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Letter Spacing */
+  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --animate-heartbeat: heartbeat 2s infinite ease-in-out;
+
+  --spacing-xxs: .5rem;
+  --spacing-xs: 1rem;
+  --spacing-sm: 2rem;
+  --spacing-md: 3rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  --spacing-xxl: 8rem;
+
+  /* Opacity (Fixed variable context to --color-dark-blue) */
+  --color-opacity-25: color-mix(in oklch, var(--color-dark-blue), transparent 75%);
+  --color-opacity-50: color-mix(in oklch, var(--color-dark-blue), transparent 50%);
+  --color-opacity-75: color-mix(in oklch, var(--color-dark-blue), transparent 25%);
+
+  @keyframes heartbeat {
+    0%, 19%, 38%, 100% {
+      transform: scale(1);
+    }
+    9%, 28% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes rainbow {
+    0% { color: var(--color-red); }
+    14% { color: var(--color-orange); }
+    28% { color: var(--color-yellow); }
+    42% { color: var(--color-green); }
+    57% { color: var(--color-light-blue); }
+    71% { color: var(--color-dark-blue); }
+    85% { color: var(--color-purple); }
+    100% { color: var(--color-red); }
+  }
+
+}
+
+
+:root {
+  /* Fonts */
+  --font-brand: "Barlow", sans-serif;
+  --font-display: "Khand", ui-sans-serif, sans-serif, system-ui;
+  --font-numbers: "Funnel Sans", sans-serif;
+  --font-eyebrow: "Supreme", "Segoe UI Variable", "Segoe UI", "Aptos", "Calibri", "Arial", sans-serif;
+  --font-buttons: "Khand", ui-sans-serif, sans-serif, system-ui;
+  --font-sans: "Khand", ui-sans-serif, sans-serif, system-ui;
+  --font-serif: "Roboto", ui-sans-serif, sans-serif, system-ui;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+
+  /* Core Primaries */
+  --background: #fafafa;
+  --foreground: oklch(0.3373 0.0925 258.52);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.3373 0.0925 258.52);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.3373 0.0925 258.52);
+  --primary: oklch(0.3373 0.0925 258.52);
+  --primary-foreground: oklch(0.9659 0.0065 208.7829);
+  --secondary: oklch(0.8642 0.1141 79.7487);
+  --secondary-foreground: oklch(0.3373 0.0925 258.52);
+  --muted: oklch(0.8463 0.0383 219.9626);
+  --muted-foreground: oklch(0.3373 0.0925 258.52);
+
+  /* Accents & Borders */
+  --accent: oklch(0.65 0.12 219.43);
+  --accent-foreground:oklch(0.8642 0.1141 79.7487);
+  --destructive: oklch(0.6254 0.1812 27.1628);
+  --destructive-foreground: oklch(0.8463 0.0383 219.9626);
+  --border: oklch(0.3373 0.0925 258.52);
+  --input:  oklch(0.9659 0.0065 208.7829);
+  --ring: oklch(0.3373 0.0925 258.52);
+
+  /* Charts */
+  --chart-1: oklch(0.83 0.04 219.35);
+  --chart-2: oklch(0.84 0.14 85.21);
+  --chart-3: oklch(0.66 0.18 44.73);
+  --chart-4: oklch(0.55 0.21 32);
+  --chart-5: oklch(0.45 0.14 340.21);
+  --chart-6: oklch(0.52 0.1 230.09);
+  --chart-7: oklch(0.65 0.12 219.43);
+  --chart-8: oklch(0.78 0.11 195.12);
+
+  /* Sidebar (Consolidated to your primary configuration layout) */
+  --sidebar: oklch(96% 0 0);
+  --sidebar-foreground: oklch(27% 0.09 254.4);
+  --sidebar-primary: oklch(27% 0.09 254.4);
+  --sidebar-primary-foreground: oklch(83% 0.04 220);
+  --sidebar-accent: oklch(65% 0.12 219.43);
+  --sidebar-accent-foreground: oklch(84% 0.14 85);
+  --sidebar-border: oklch(96% 0 0);
+  --sidebar-ring: oklch(78% 0.11 195.12);
+
+  /* Radius */
+  --radius: 0.1rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Dark-Blue Base Primary mapping */
+  --base-primary: oklch(0.3373 0.0925 258.52);
+  --base-primary-fade: oklch(61.56% 0.0494 258.73);
+  --base-primary-inverse: oklch(83% 0.04 220);
+  --base-primary-inverse-fade: oklch(86.40% 0.032 220);
+
+  /* Dark-Green */
+  --base-color-1: oklch(54.28% 0.0982 220.31);
+  --base-color-1-fade: oklch(71.63% 0.0762 214.6);
+  --base-color-1-inverse: oklch(96% 0.01 210);
+  --base-color-1-inverse-fade: oklch(86.40% 0.009 210);
+
+  /* Green */
+  --base-color-2: oklch(66.27% 0.114 206.9);
+  --base-color-2-fade: oklch(78.23% 0.094 203.21);
+  --base-color-2-inverse: oklch(84% 0.14 85.21);
+  --base-color-2-inverse-fade: oklch(94.00% 0.05 85.21);
+
+  /* Light-Green */
+  --base-color-3: oklch(0.7877 0.0911 193.5); /* Converted #71c9c5 to OKLCH for system consistency */
+  --base-color-3-fade: oklch(86.35% 0.054 193.29);
+  --base-color-3-inverse: oklch(45% 0.14 340);
+  --base-color-3-inverse-fade: oklch(56.00% 0.112 340);
+
+  /* Light-Blue */
+  --base-color-4: oklch(83% 0.04 220);
+  --base-color-4-fade: oklch(90.61% 0.023 220.74);
+  --base-color-4-inverse: oklch(27% 0.09 254.4);
+  --base-color-4-inverse-fade: oklch(61.56% 0.0494 258.73);
+
+  /* Yellow */
+  --base-color-5: oklch(84% 0.14 85.21);
+  --base-color-5-fade: oklch(94.00% 0.05 85.21);
+  --base-color-5-inverse: oklch(27% 0.09 254.4);
+  --base-color-5-inverse-fade: oklch(61.56% 0.0494 258.73);
+
+  /* Orange */
+  --base-color-6: oklch(66% 0.18 45);
+  --base-color-6-fade: oklch(82.08% 0.088 38.17);
+  --base-color-6-inverse: oklch(27% 0.09 254.4);
+  --base-color-6-inverse-fade: oklch(61.56% 0.0494 258.73);
+
+  /* Red */
+  --base-color-7: oklch(55% 0.21 32);
+  --base-color-7-fade: oklch(68.73% 0.144 25.6);
+  --base-color-7-inverse: oklch(83% 0.04 220);
+  --base-color-7-inverse-fade: oklch(90.61% 0.023 220.74);
+
+  /* Purple */
+  --base-color-8: oklch(45% 0.14 340);
+  --base-color-8-fade: oklch(69.83% 0.061 347.29);
+  --base-color-8-inverse: oklch(77.98% 0.085 191.74);
+  --base-color-8-inverse-fade: oklch(86.35% 0.054 193.29);
+
+  /* Smoke */
+  --base-color-9: #eff5f6;
+  --base-color-9-fade: color-mix(in srgb, #eff5f6 50%, transparent);
+  --base-color-9-inverse: oklch(27% 0.09 254.4);
+  --base-color-9-inverse-fade: oklch(61.56% 0.0494 258.73);
+
+  /* Shadows (Fixed syntax errors & trailing properties) */
+  --shadow-sm:
+    0.95px 0.5px 0 currentColor, 1.45px 1px 0 currentColor, 1.95px 1.5px 0 currentColor, 
+    2.45px 2px 0 currentColor, 2.95px 2.5px 0 currentColor, 3.45px 3px 0 currentColor, 
+    3.95px 3.5px 0 currentColor;
+
+  --shadow-md:
+    0.95px 0.5px 0 currentColor, 1.45px 1px 0 currentColor, 1.95px 1.5px 0 currentColor, 
+    2.45px 2px 0 currentColor, 2.95px 2.5px 0 currentColor, 3.45px 3px 0 currentColor, 
+    3.95px 3.5px 0 currentColor, 4.45px 4px 0 currentColor;
+
+  --shadow:
+    0.95px 0.5px 0 currentColor, 1.45px 1px 0 currentColor, 1.95px 1.5px 0 currentColor, 
+    2.45px 2px 0 currentColor, 2.95px 2.5px 0 currentColor, 3.45px 3px 0 currentColor, 
+    3.95px 3.5px 0 currentColor, 4.45px 4px 0 currentColor, 4.95px 4.5px 0 currentColor, 
+    5.45px 5px 0 currentColor;
+
+  --shadow-lg:
+    0.95px 0.5px 0 currentColor, 1.45px 1px 0 currentColor, 1.95px 1.5px 0 currentColor, 
+    2.45px 2px 0 currentColor, 2.95px 2.5px 0 currentColor, 3.45px 3px 0 currentColor, 
+    3.95px 3.5px 0 currentColor, 4.45px 4px 0 currentColor, 4.95px 4.5px 0 currentColor, 
+    5.45px 5px 0 currentColor, 5.95px 5.5px 0 currentColor, 6.45px 6px 0 currentColor, 
+    6.95px 6.5px 0 currentColor, 7.45px 7px 0 currentColor, 7.95px 7.5px 0 currentColor, 
+    8.45px 8px 0 currentColor;
+
+  --shadow-xl:
+    0.95px 0.5px 0 currentColor, 1.45px 1px 0 currentColor, 1.95px 1.5px 0 currentColor, 
+    2.45px 2px 0 currentColor, 2.95px 2.5px 0 currentColor, 3.45px 3px 0 currentColor, 
+    3.95px 3.5px 0 currentColor, 4.45px 4px 0 currentColor, 4.95px 4.5px 0 currentColor, 
+    5.45px 5px 0 currentColor, 5.95px 5.5px 0 currentColor, 6.45px 6px 0 currentColor, 
+    6.95px 6.5px 0 currentColor, 7.45px 7px 0 currentColor, 7.95px 7.5px 0 currentColor, 
+    8.45px 8px 0 currentColor, 8.95px 8.5px 0 currentColor, 9.45px 9px 0 currentColor, 
+    9.95px 9.5px 0 currentColor, 10.45px 10px 0 currentColor;
+}
+
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-ink font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-black/5 shadow-sm;
+}
+
+.data-grid-line {
+  @apply border-b border-black/10;
+}
+
+
+
+
+/** -----------------------------------------------------------
+
+EXAMPLE TOKENS
+
+:root{
+  --font-general-sans: "General Sans","Segoe UI Variable","Segoe UI","Aptos","Calibri","Arial",sans-serif;
+  --font-khand: "Khand","Bahnschrift","Segoe UI Variable","Segoe UI","Aptos","Calibri","Arial Narrow","Arial",sans-serif;
+  --font-fira-code: "Fira Code","Cascadia Code","Consolas","Segoe UI Mono","Courier New",monospace;
+  --font-supreme: "Supreme","Segoe UI Variable","Segoe UI","Aptos","Calibri","Arial",sans-serif;
+  --font-noto-emoji: "Noto Emoji","Segoe UI Emoji","Segoe UI Symbol","Apple Color Emoji","Noto Color Emoji",sans-serif;
+  --font-pacifico: "Pacifico","Segoe Script","Brush Script MT","Comic Sans MS",cursive;
+  --font-barlow: "Barlow","Segoe UI Variable","Segoe UI","Aptos","Calibri","Arial",sans-serif;
+  --font-logic-monoscript: "Logic Monoscript","Cascadia Mono","Cascadia Code","Consolas","Segoe UI Mono","Courier New",monospace;
+}
+
+----------------------------------------------------------- */
